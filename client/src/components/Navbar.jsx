@@ -20,7 +20,7 @@ import {
 } from "@mui/material";
 import { dark } from "@mui/material/styles/createPalette";
 
-const Navbar = () => {
+const Navbar = ({ isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch();
   const theme = useTheme();
   return (
@@ -38,11 +38,7 @@ const Navbar = () => {
       >
         {/* LEFT SIDE */}
         <FlexBetween>
-          <IconButton
-            onClick={() =>
-              console.log("open/close sidebar", theme.palette.background.alt)
-            }
-          >
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
           <FlexBetween
