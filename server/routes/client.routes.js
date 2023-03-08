@@ -1,9 +1,14 @@
 import { Router } from "express";
-import { getProducts, getCustomers } from "../controllers/client.controller.js";
+import {
+  getProducts,
+  getCustomers,
+  getTransactions,
+} from "../controllers/client.controller.js";
 
 const router = Router();
 
 router.get("/products", getProducts);
 router.get("/customers", getCustomers);
+router.get("/transactions", getTransactions);
 
 export default router;
