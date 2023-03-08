@@ -7,9 +7,10 @@ const User = new mongoose.Schema(
     password: { type: String, required: true, min: 5 },
     city: String,
     state: String,
-    contry: String,
+    country: String,
     occupation: String,
     transactions: Array,
+    phoneNumber: String,
     role: {
       type: String,
       enum: ["user", "admin", "superadmin"],

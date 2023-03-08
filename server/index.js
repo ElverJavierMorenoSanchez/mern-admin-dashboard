@@ -46,6 +46,6 @@ mongoose
     app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
     //ProductStat.insertMany(dataProductStat);
     //Product.insertMany(dataProduct);
-    //User.insertMany(dataUser);
+    User.insertMany(dataUser);
   })
   .catch((error) => console.log(`${error} did not connect`));
