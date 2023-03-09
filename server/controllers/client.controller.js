@@ -67,26 +67,22 @@ export const getTransactions = async (req, res) => {
 export const getGeography = async (req, res) => {
   try {
     const users = await User.find();
+    let i = 0;
 
     const mappedLocations = users.reduce((acc, { country }) => {
-      console.log(
-        "🚀 ~ file: client.controller.js:73 ~ mappedLocations ~ acc:",
-        acc
-      );
       const countryISO3 = getCountryIso3(country);
+
       if (!acc[countryISO3]) {
         acc[countryISO3] = 0;
       }
       acc[countryISO3]++;
       return acc;
     }, {});
-    console.log(
-      "🚀 ~ file: client.controller.js:83 ~ mappedLocations ~ mappedLocations:",
-      mappedLocations
-    );
+
     const formattedLocations = Object.entries(mappedLocations).map(
       ([country, count]) => ({ id: country, value: count })
     );
+
     res.status(200).json(formattedLocations);
   } catch (error) {
     res.status(404).json({ message: error.message });
