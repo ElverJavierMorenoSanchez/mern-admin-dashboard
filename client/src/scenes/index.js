@@ -9,3 +9,4 @@ export { default as Daily } from "./daily/Daily";
 export { default as Monthly } from "./monthly/Monthly";
 export { default as Breakdown } from "./breakdown/Breakdown";
 export { default as Admin } from "./admin/Admin";
+export { default as Performance } from "./performance/Performance";
