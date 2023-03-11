@@ -7,3 +7,4 @@ export { default as DataGridCustomToolbar } from "./DataGridCustomToolbar";
 export { default as OverviewChart } from "./OverviewChart";
 export { default as BreakdownChart } from "./BreakdownChart";
 export { default as CustomColumnMenu } from "./CustomColumnMenu";
+export { default as StatBox } from "./StatBox";

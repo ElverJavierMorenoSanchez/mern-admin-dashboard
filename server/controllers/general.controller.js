@@ -28,7 +28,7 @@ export const getDashboardStats = async (req, res) => {
     const overallStat = await OverallStat.find({ year: currentYear });
 
     const {
-      totalCutomers,
+      totalCustomers,
       yearlyTotalUnits,
       yearlySalesTotal,
       monthlyData,
@@ -42,7 +42,7 @@ export const getDashboardStats = async (req, res) => {
     const todayStats = dailyData.find(({ date }) => date === currentDay);
 
     res.status(200).json({
-      totalCutomers,
+      totalCustomers,
       yearlyTotalUnits,
       yearlySalesTotal,
       monthlyData,
