@@ -27,9 +27,9 @@ import { DataGrid } from "@mui/x-data-grid";
 
 const Dashboard = () => {
   const { data, isLoading } = useGetDashboardQuery();
-  console.log("🚀 ~ file: Dashboard.jsx:30 ~ Dashboard ~ data:", data);
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
+  const isMobile = useMediaQuery("(max-width: 540px)");
 
   const columns = [
     {
@@ -63,7 +63,7 @@ const Dashboard = () => {
   ];
   return (
     <Box m="1.5rem 2.5rem">
-      <FlexBetween>
+      <FlexBetween flexDirection={isMobile && "column"}>
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
         <Box>
@@ -74,6 +74,7 @@ const Dashboard = () => {
               fontSize: "14px",
               fontWeight: "bold",
               p: "10px 20px",
+              mt: isMobile && "1rem",
             }}
           >
             <DownloadOutlined sx={{ mr: "10px" }} />

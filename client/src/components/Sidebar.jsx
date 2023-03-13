@@ -16,7 +16,6 @@ import {
 
 import {
   SettingsOutlined,
-  ChevronLeft,
   ChevronLeftOutlined,
   HomeOutlined,
   ShoppingCartOutlined,
@@ -34,7 +33,6 @@ import {
 
 import { useLocation, useNavigate } from "react-router-dom";
 import profileImage from "../assets/profile.jpg";
-import { width } from "@mui/system";
 import FlexBetween from "./FlexBetween";
 
 const navItems = [
@@ -143,7 +141,7 @@ const Sidebar = ({
                 </Box>
                 {isNonMobile || (
                   <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-                    <ChevronLeft />
+                    <ChevronLeftOutlined />
                   </IconButton>
                 )}
               </FlexBetween>
@@ -200,9 +198,13 @@ const Sidebar = ({
               })}
             </List>
           </Box>
-          <Box position="absolute" bottom="2rem">
+          <Box bottom="2rem">
             <Divider />
-            <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
+            <FlexBetween
+              textTransform="none"
+              gap="1rem"
+              m="1rem 2rem 0.7rem 2.5rem"
+            >
               <Box
                 component="img"
                 alt="profile"
@@ -227,9 +229,11 @@ const Sidebar = ({
                   {user.occupation}
                 </Typography>
               </Box>
-              <SettingsOutlined
-                sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
-              />
+              <IconButton onClick={() => {}}>
+                <SettingsOutlined
+                  sx={{ color: theme.palette.secondary[300], fontSize: "25px" }}
+                />
+              </IconButton>
             </FlexBetween>
           </Box>
         </Drawer>
